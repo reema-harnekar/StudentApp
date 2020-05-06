@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="card" style="margin-top: 30px;">
+    <div class="card-body">
+        <h1 class="card-title">Education Details</h1>
+  <form action="" method="POST">
+      {%for i in range(1,session.standard) %}
+      <div class="card" style="margin-top: 30px;">
+        <div class="card-body">
+    <div class="form-group">
+        <label >Standard</label>
+        <select name= "standard" class="form-control" id="validationDefault01"> 
+          <option>{{i}}</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label >Grade</label>
+        <select name = 'grade'class="form-control" id="validationDefault02" required=required> 
+            <option>O</option>
+            <option>A</option>
+            <option>B</option>
+            <option>C</option>
+            <option>D</option>
+            <option>E</option>
+            <option>F</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label >Remark</label>
+        <select name="remark" class="form-control" id="validationDefault03" required=required> 
+          <option>Pass</option>
+          <option >Fail</option>
+        </select>
+    </div>
+    <div class="form-group">
+      <label>Percentage</label>
+      <input type="number" required= required name="percentage" class="form-control" id="validationDefault04">
+    </div>
+        </div>
+      </div>
+    {%endfor%}
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+    </div>
+    </div>
+{% endblock %}
+

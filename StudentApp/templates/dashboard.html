@@ -1,0 +1,36 @@
+
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="card" style="margin-top: 30px; margin-bottom: 20px;">
+    <div class="card-body">
+        <h1 class="card-title">Dashboard <small> Welcome {{session.username}}</small></h1>
+        <hr>
+        {%if(grades)%}
+            <br>
+            <h2>Education Details</h2>
+            <br>
+            <table class="table" style="margin-top: 20px;">
+                <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Standard</th>
+                    <th scope="col">Grade</th>
+                    <th scope="col">Remark</th>
+                    <th scope="col">Percentage</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for marks in grades %}
+                <tr>
+                    <th scope="row">{{marks.ROLLNO}}</th>
+                    <td>{{marks.STANDARD}}</td>
+                    <td>{{marks.REMARK}}</td>
+                    <td>{{marks.PERCENTAGE}}</td>
+                </tr>
+                {%endfor%}
+                </tbody>
+            </table>
+        {%endif%}         
+    </div>
+</div>
+{% endblock %}
